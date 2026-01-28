@@ -1,5 +1,82 @@
 .header {
-  background-color: #663399;
-  color: #ffffff;
-  padding: 10px 15px;
+  .container {
+    display: flex;
+    gap: 16px;
+    padding-right: 0;
+    position: relative;
+
+    @include tablet {
+      padding-right: 20px;
+    }
+  }
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: auto;
+  margin-top: 12px;
+
+  @include tablet {
+    margin-top: 22px;
+  }
+}
+
+.header__desc {
+  display: none;
+
+  @include desktop {
+    margin: 0 0 auto;
+    display: flex;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 133%;
+    color: $base-black;
+    max-width: 160px;
+    align-items: center;
+    min-height: 80px;
+  }
+}
+
+.header__actions.user-actions {
+  margin-left: auto;
+  margin-bottom: auto;
+
+  @include tablet {
+    margin-top: 10px;
+  }
+
+  @include desktop {
+    min-width: 282px;
+  }
+}
+
+.header__nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 60px;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+  height: 0;
+
+  &--active {
+    opacity: 1;
+    height: auto;
+  }
+
+  @include tablet {
+    position: static;
+    height: auto;
+    opacity: 1;
+    margin: 0 auto 0 50px;
+    width: auto;
+  }
+
+  @include desktop {
+    margin-left: 114px;
+  }
 }

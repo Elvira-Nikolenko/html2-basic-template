@@ -1,0 +1,44 @@
+.title {
+  font-family: $font-family;
+  text-align: center;
+  color: $base-black;
+  margin: 0;
+}
+
+.title--h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+
+  @include tablet {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 152%;
+  }
+
+  @include desktop {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 152%;
+  }
+}
+
+.title--h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 178%;
+
+  @include tablet {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+  }
+}
+
+.title--h4 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: 0.02em;
+  color: $base-primary;
+}

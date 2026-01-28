@@ -1,0 +1,68 @@
+@import "variables";
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: $breakpoint-tablet) and (max-width: ($breakpoint-desktop - 1px)) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @media (max-width: ($breakpoint-tablet - 1px)) {
+    @content;
+  }
+}
+
+@mixin title-h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+  font-family: $font-family;
+  color: $base-black;
+
+  @include tablet {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 152%;
+    text-align: center;
+  }
+
+  @include desktop {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 152%;
+    text-align: center;
+  }
+}
+
+@mixin title-h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 178%;
+  font-family: $font-family;
+  color: $base-black;
+
+  @include tablet {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+  }
+
+  @include desktop {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+  }
+}

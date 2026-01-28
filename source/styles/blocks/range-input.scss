@@ -1,0 +1,67 @@
+.range-input.my-slider-target {
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  height: 2px;
+  background: $light-grey;
+
+  .my-slider-connect {
+    background: $primary-lighter;
+  }
+
+  .my-slider-handle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid $primary-lighter;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: none;
+
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: transparent;
+    }
+  }
+
+  .my-slider-handle:hover,
+  .my-slider-handle:focus-within {
+    outline: none;
+
+    &::before {
+      background: $primary-lighter;
+      opacity: 0.25;
+    }
+  }
+
+  .my-slider-handle.my-slider-active:hover {
+    &::before {
+      background: $primary-lighter;
+      opacity: 1;
+    }
+  }
+
+  &[disabled] {
+    .my-slider-connect {
+      background: $base-grey;
+    }
+
+    .my-slider-handle {
+      border-color: $base-grey;
+    }
+
+    .my-slider-handle::before {
+      display: none;
+    }
+  }
+}

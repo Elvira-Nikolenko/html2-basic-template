@@ -1,0 +1,109 @@
+.footer {
+  padding: 20px 0 30px;
+  overflow: hidden;
+
+  @include tablet {
+    padding: 43px 0 39px;
+  }
+
+  @include desktop {
+    padding: 41px 0 38px;
+  }
+}
+
+.footer__container {
+  @include desktop {
+    display: grid;
+    gap: 0 30px;
+    grid-template-columns: auto 1fr;
+  }
+}
+
+
+.footer__html-academy {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  color: $base-grey;
+  display: flex;
+  gap: 3px;
+  width: fit-content;
+  margin: 20px auto 0;
+
+  @include tablet {
+    margin-top: 10px;
+  }
+
+  @include desktop {
+    grid-column: 1/ -1;
+  }
+}
+
+.footer__html-academy-link {
+  color: $base-grey;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &:hover,
+  &:focus-within {
+    color: $primary-darker;
+  }
+
+  &:active {
+    color: $alt-primary-darker;
+  }
+}
+
+.footer__html-academy-icon {
+  width: 12px;
+  height: 16px;
+}
+
+.footer__navigation {
+  margin-top: 20px;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 29px;
+    margin-top: 7px;
+  }
+
+  @include desktop {
+    margin-top: 0;
+  }
+}
+
+.footer__additional-nav {
+  position: relative;
+
+  &::after,
+  &::before {
+    position: absolute;
+    left: -100%;
+    width: 300%;
+    height: 1px;
+    background: $base-secondary;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: "";
+    top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 14px;
+
+    &::before {
+      content: "";
+      bottom: 0;
+    }
+  }
+}

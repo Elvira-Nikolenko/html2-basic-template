@@ -1,0 +1,96 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  @include desktop {
+    display: flex;
+    gap: 11px;
+  }
+}
+
+.form__fieldset {
+  border: none;
+  padding: 0;
+  margin: 20px 0 0;
+
+  @include desktop {
+    margin-top: 41px;
+  }
+}
+
+.form__fieldset + .form__fieldset {
+  margin-top: 31px;
+
+  @include tablet {
+    margin-top: 20px;
+  }
+}
+
+.form__legend {
+  font-family: $font-family;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: $base-black;
+}
+
+.form__range-input {
+  margin: 31px auto 0;
+}
+
+.form__input-container {
+  display: flex;
+  align-items: center;
+  margin-top: 34px;
+  gap: 18px;
+
+  @include tablet {
+    margin-top: 30px;
+    gap: 23px;
+  }
+}
+
+.form__spacer {
+  width: 4px;
+  height: 2px;
+  background: $base-grey;
+}
+
+.form__radio {
+  margin-top: 20px;
+}
+
+.form__checkbox {
+  margin-top: 20px;
+}
+
+.form__controls {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include tablet {
+    grid-column: 1/-1;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  @include desktop {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+.form__label {
+  width: 100%;
+}

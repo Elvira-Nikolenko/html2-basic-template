@@ -1,0 +1,20 @@
+.logo {
+  width: 32px;
+  height: auto;
+
+  @include tablet {
+    width: 82px;
+  }
+
+  @include desktop {
+    width: 170px;
+  }
+}
+
+.logo--footer {
+  width: 82px;
+
+  @include tablet {
+    width: 170px;
+  }
+}

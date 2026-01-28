@@ -1,0 +1,65 @@
+.button {
+  border-radius: 4px;
+  padding: 8px 20px;
+  min-width: 113px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  font-family: $font-family;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 6px;
+
+  &:hover,
+  &:focus-within {
+    background: $alt-primary-lighter;
+  }
+
+  &:active {
+    background: $alt-primary-darker;
+  }
+
+  &:disabled {
+    background: $base-grey;
+  }
+}
+
+.button--primary {
+  color: $base-white;
+  background: $base-primary;
+}
+
+.button--secondary {
+  color: $base-primary;
+  background: $base-white;
+
+  &:hover,
+  &:focus-within {
+    color: $base-white;
+  }
+
+  &:active {
+    color: $base-white;
+  }
+
+  &:disabled {
+    background: $base-grey;
+    color: $light-grey;
+  }
+}
+
+.button--small {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+}
+
+.button__icon {
+  width: 20px;
+  height: 16px;
+}

@@ -1,0 +1,54 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  padding: 40px 20px 20px;
+  background: $base-white;
+
+  @include tablet {
+    padding: 50px 30px 30px;
+  }
+
+  &:hover {
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+}
+
+.card__image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__title {
+  margin-top: 24px;
+  text-align: start;
+
+  @include tablet {
+    margin-top: 31px;
+  }
+}
+
+.card__desc {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: $base-black;
+  margin: 4px 0 0;
+
+  @include tablet {
+    margin-top: 10px;
+  }
+}
+
+.card__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+
+  @include tablet {
+    margin-top: 19px;
+  }
+}

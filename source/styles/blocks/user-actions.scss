@@ -1,0 +1,132 @@
+.user-actions {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+
+  @include desktop {
+    gap: 18px;
+  }
+}
+
+.user-actions__item {
+  display: flex;
+  align-items: center;
+}
+
+.user-actions__link {
+  display: flex;
+  gap: 8px;
+  padding: 22px;
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $base-black;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+  align-items: center;
+
+  &:hover,
+  &:focus-within {
+    color: $base-primary;
+  }
+
+  &:active {
+    background: $base-secondary;
+    color: $base-primary;
+  }
+}
+
+.user-actions__link-desc {
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
+}
+
+.user-actions__icon {
+  width: 16px;
+  height: 16px;
+}
+
+.user-actions__toggle-container {
+  @include tablet {
+    display: none;
+  }
+}
+
+.user-actions__toggle-btn {
+  border: none;
+  background: transparent;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+
+  &:active {
+    background: $base-secondary;
+  }
+}
+
+.user-actions__toggle-btn--active {
+  background: $base-secondary;
+}
+
+.user-actions__toggle-btn--active .user-actions__burger {
+  background: transparent;
+}
+
+.user-actions__toggle-btn--active .user-actions__burger::after,
+.user-actions__toggle-btn--active .user-actions__burger::before {
+  top: 0;
+}
+
+.user-actions__toggle-btn--active .user-actions__burger::after {
+  transform: rotate(45deg);
+  transition: top 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.user-actions__toggle-btn--active .user-actions__burger::before {
+  transform: rotate(-45deg);
+  transition: bottom 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.user-actions__burger {
+  width: 16px;
+  height: 1px;
+  background: $base-black;
+  position: relative;
+  transition: background 0.5s ease;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.user-actions__burger::after,
+.user-actions__burger::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  background: $base-black;
+  transition: all 0.3s ease;
+}
+
+.user-actions__burger::after {
+  top: 6px;
+  transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.user-actions__burger::before {
+  top: -6px;
+  transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}

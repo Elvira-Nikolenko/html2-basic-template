@@ -1,0 +1,283 @@
+.hero__container {
+  position: relative;
+}
+
+.hero__image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+
+  @include tablet {
+    order: 2;
+  }
+
+  @include desktop {
+    order: 0;
+    padding-top: 30px;
+  }
+}
+
+.hero__img-product {
+  width: 280px;
+  height: 280px;
+
+  @include tablet {
+    width: 476px;
+    height: 476px;
+  }
+
+  @include desktop {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+.hero__slide-container {
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.hero__slide {
+  display: none;
+  min-height: 656px;
+  max-width: 320px;
+  margin: 0 auto;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    @include tablet {
+      height: 77.2%;
+    }
+
+    @include desktop {
+      height: 100%;
+    }
+  }
+
+  @include tablet {
+    max-width: 768px;
+    min-height: 828px;
+  }
+
+  @include desktop {
+    max-width: 1230px;
+  }
+
+  @include desktop {
+    min-height: 714px;
+  }
+}
+
+.hero__slide--flat {
+  &::after {
+    background: $flat-white;
+  }
+}
+
+.hero__slide--latte {
+  &::after {
+    background: $lavender-latte;
+  }
+}
+
+.hero__slide--espresso {
+  &::after {
+    background: $espresso;
+  }
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+
+  @include tablet {
+    margin-top: 60px;
+  }
+
+  @include desktop {
+    margin-top: 179px;
+    align-items: flex-start;
+  }
+}
+
+.hero__title {
+  font-family: $font-family;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 133%;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: $base-black;
+  margin: 5px 0 0;
+
+  @include tablet {
+    font-size: 56px;
+    line-height: 143%;
+  }
+}
+
+.hero__desc {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  text-align: center;
+  color: $base-black;
+  margin: 8px 0 0;
+  max-width: 266px;
+
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 160%;
+    max-width: 600px;
+    margin-top: 15px;
+  }
+
+  @include desktop {
+    text-align: start;
+  }
+}
+
+.hero__price-container {
+  display: flex;
+  align-items: center;
+}
+
+.hero__order {
+  margin-top: 21px;
+  display: flex;
+  gap: 22px;
+
+  @include desktop {
+    margin-top: 41px;
+    margin-left: 5px;
+  }
+}
+
+.hero__slide.hero__slide--active {
+  display: block;
+}
+
+.hero__controls {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  @include tablet {
+    left: 50%;
+    height: 77%;
+    transform: translateX(-50%);
+  }
+
+  @include desktop {
+    height: 100%;
+  }
+}
+
+.hero__control {
+  background: transparent;
+  border: none;
+  color: $base-primary;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+  }
+
+  &:last-child {
+    &:hover {
+      background: linear-gradient(-90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &:active {
+      background: linear-gradient(-90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    }
+  }
+
+  &:disabled {
+    color: $base-grey;
+    pointer-events: none;
+  }
+
+  @include tablet {
+    min-width: 77px;
+  }
+}
+
+.hero__control-icon {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.hero__bullets {
+  display: none;
+
+  @include desktop {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    bottom: 0;
+    margin-bottom: 60px;
+    gap: 8px;
+  }
+}
+
+.hero__bullet {
+  width: 62px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  padding: 0;
+}
+
+
+.hero__bullet-inner {
+  width: 100%;
+  height: 4px;
+  pointer-events: none;
+  background: $base-white;
+}
+
+.hero__bullet:hover .hero__bullet-inner {
+  background: $base-primary;
+  opacity: 0.25;
+}
+
+.hero__bullet--active .hero__bullet-inner {
+  background: $base-primary;
+}
